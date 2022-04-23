@@ -41,7 +41,7 @@ main{
     /* flex-direction: column; */
     align-items: center;
     justify-content: center;
-    z-index: 10;
+    /* z-index: 0; */
 }
 
 .song-title{
@@ -134,5 +134,52 @@ button{
     color: azure;
     font-size: 20px;
     cursor: pointer;
+    padding: 10px;
     margin: 0 20px;
+}
+
+#play{
+    color : rgb(246, 89, 89);
+    font-size: 30px;
+}
+
+.music-container{
+    background-color: rgb(246, 89, 89);
+    border-radius: 25px 15px 0 0;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: calc(100% - 40px);
+    padding: 10px 10px 10px 150px;
+    opacity: 1;
+    transform: translateY(0%);
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+    z-index: -10;
+}
+
+
+/* play class activates with javascript */
+
+
+main.play .music-container {
+    opacity: 1;
+    transform: translateY(-100%);
+}
+
+.progress-container{
+     background-color: azure;
+     border-radius: 5px;
+     cursor: pointer;
+     margin:10px 1px;
+     height: 4px;
+     width: 240px;
+
+}
+
+.progress{
+    background-color: black;
+    border-radius: inherit;
+    height: 100%;
+    width: 0%;
+    transition: width 100ms linear;
 }
