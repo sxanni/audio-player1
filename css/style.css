@@ -9,10 +9,130 @@ html{
 
 }
 
+h1{
+    margin-bottom: 230px;
+}
+h2{
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+
 body{
     color: azure;
 
     background-image: linear-gradient(0deg, black, rgb(246, 89, 89));
-    /* min-height: 100%; */
-    font-family: Arial, Helvetica, sans-serif  ;
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+main{
+    background-color:black;
+    color: black;
+    border-radius: 15px;
+    display: flex;
+    padding: 20px 30px;
+    margin: 30px;
+    position: relative;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.song-title{
+    color: azure;
+}
+
+
+figure::before{
+    background-image: linear-gradient(0deg, black, rgb(246, 89, 89));
+
+    content: "";
+    background-color: azure;
+    border-radius: 50% ;
+    border-style: solid;
+    border-width: 3px;
+    width: 125px;
+    height: 125px;
+    position: absolute;
+    /* right:1%; */
+    left: -15px;
+    bottom: -20%;
+    /* top: 1%; */
+    transform: translate(-50%, 100%);
+    animation: rotate 3s linear infinite;
+    /* this makes it so animation is paused when the page loads, until we play music */
+    animation-play-state: paused; 
+    
+}
+
+/* play class activated with javascript */
+
+main.play img{
+    animation-play-state: running;
+}
+
+figure{
+    position: relative;
+    width: 100px;
+    border-radius: 6px;
+
+}
+
+
+figure::after{
+    content: "";
+    background-color: black;
+    border-radius: 50% ;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left:50%;
+    bottom: 100%;
+    transform: translate(-50%, -200%);
+}
+
+
+img{
+    border-radius:50%;
+    width: inherit;
+    height: 100px;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+        /* transform: translate(-50% 333%); */
+    }
+
+    to {
+       transform: rotate(860deg); 
+    }
+    
+}
+
+.controls{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+button{
+    background-color: transparent;
+    border: 0;
+    color: azure;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0 20px;
 }
